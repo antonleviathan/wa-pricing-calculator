@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<head>
+    <title>Pricing Calculator for WA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Remove this before uploading to Sitefinity -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.css" rel="stylesheet">
+    <link href="css/nouislider.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <section id="pricing">
+
+    <div id="flipper-container">
+      <div href="#" class="flipper">
+        <div class="left-flip active-flipper">
+          Monthly Billing
+        </div>
+        <div href="#" class="right-flip">
+          Annual Billing
+        </div>
+      </div>
+      <div class="annual-monthly-msg">Save 10% with annual billing plan</div>
+    </div>
+
+    <div class="center-slider">
+      <div class="how-many-contacts">
+        How many contacts<br>do you have?
+      </div>
+      <div style="float:left;" class="slider-container">
+        <div class="slider" id="noUiSlider"></div>
+      </div>
+    </div>
+
+    <br>
+
+    <div id="main-pricing-anchor">
+      <div id="free-plan" class="price-container regular-border">
+        <img src="img/pricing_table_icons_small/free.png">
+        <div class="plan">FREE</div>
+        <div class="nums-style">Contacts: <span class="plan-contacts">50</span></div>
+        <div class="nums-style">Admins: <span class="plan-admins">1</span></div>
+        <div class="plan-price-container">
+          <div class="dollar-sign"></div>
+          <div class="plan-price" id="free-plan-price">FREE</div>
+        </div>
+      </div>
+      <div id="group-plan" class="price-container regular-border">
+        <img src="img/pricing_table_icons_small/group.png">
+        <div class="plan">GROUP</div>
+        <div class="nums-style">Contacts: <span class="plan-contacts">250</span></div>
+        <div class="nums-style">Admins: <span class="plan-admins">5</span></div>
+        <div class="plan-price-container">
+          <div class="dollar-sign">$</div>
+          <div class="plan-price" id="group-plan-price">40</div>
+        </div>
+      </div>
+      <div id="community-plan" class="price-container regular-border">
+        <img src="img/pricing_table_icons_small/community.png">
+        <div class="plan">COMMUNITY</div>
+        <div class="nums-style">Contacts: <span class="plan-contacts">500</span></div>
+        <div class="nums-style">Admins: <span class="plan-admins">10</span></div>
+        <div class="plan-price-container">
+          <div class="dollar-sign">$</div>
+          <div class="plan-price" id="community-plan-price">70</div>
+        </div>
+      </div>
+      <div id="professional-plan" class="price-container regular-border">
+        <img src="img/pricing_table_icons_small/professional.png">
+        <div class="plan">PROFESSIONAL</div>
+        <div class="nums-style">Contacts: <span class="plan-contacts">2000</span></div>
+        <div class="nums-style">Admins: <span class="plan-admins">25</span></div>
+        <div class="plan-price-container">
+          <div class="dollar-sign">$</div>
+          <div class="plan-price" id="professional-plan-price">130</div>
+        </div>
+      </div>
+      <div id="network-plan" class="price-container regular-border">
+        <img src="img/pricing_table_icons_small/network.png">
+        <div class="plan">NETWORK</div>
+        <div class="nums-style">Contacts: <span class="plan-contacts">5000</span></div>
+        <div class="nums-style">Admins: <span class="plan-admins">unlimited</span></div>
+        <div class="plan-price-container">
+          <div class="dollar-sign">$</div>
+          <div class="plan-price" id="network-plan-price">240</div>
+        </div>
+      </div>
+      <div id="enterprise-plan" class="price-container regular-border">
+        <img src="img/pricing_table_icons_small/enterprise.png">
+        <div class="plan">ENTERPRISE</div>
+        <div class="nums-style">Contacts: <span class="plan-contacts">15000</span></div>
+        <div class="nums-style">Admins: <span class="plan-admins">unlimited</span></div>
+        <div class="plan-price-container">
+          <div class="dollar-sign">$</div>
+          <div class="plan-price" id="enterprise-plan-price">270</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="js/nouislider.min.js"></script>
+  <script src="js/countUp.js"></script>
+  <script src="js/wNumb.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
