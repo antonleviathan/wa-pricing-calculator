@@ -14,26 +14,34 @@
   text-decoration:none;
   text-align: center;
   font-family: 'PT Sans', sans-serif;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+.trial_button:hover{
+  background-color: green;
 }
 #group-plan{
   margin-left: -2px;
 }
 #community-plan{
-  margin-left: -3px;
+  margin-left: -2px;
 }
 #professional-plan{
-  margin-left: -4px;
+  margin-left: -2px;
 }
 #network-plan{
-  margin-left: -5px;
+  margin-left: -2px;
 }
 #enterprise-plan{
-  margin-left: -6px;
+  margin-left: -2px;
 }
 .active-plan{
   border:solid 2px #8cc63f;
   position: relative;
-  z-index: 1000;
+  z-index: 1;
+  background-color: #f5f9ef;
 }
 .arrow_box {
 	position: relative;
@@ -87,10 +95,16 @@
   float: left;
   padding-top: 20px;
   padding-bottom: 10px;
-  background-color:white;
-  width: 156px;
+  width: 153px;
   text-align: center;
   font-family: 'PT Sans', sans-serif;
+  -moz-transition: all .4s ease-in;
+  -o-transition: all .4s ease-in;
+  -webkit-transition: all .4s ease-in;
+  transition: all .4s ease-in;
+}
+.price-container:hover{
+  background-color: #f5f9ef;
 }
 .regular-border{
   border: 2px solid #D9D9D9;
@@ -104,6 +118,10 @@
   width: 50%;
   line-height: 45px;
   font-family: 'PT Sans', sans-serif;
+}
+.left-flip:not(.active-flipper):hover, .right-flip:not(.active-flipper):hover{
+  background-color: #cde5b2;
+  color: white;
 }
 .left-flip{
   border-radius: 5px 0px 0px 5px;

@@ -160,33 +160,37 @@ $( document ).ready(function() {
 
   $('.left-flip').on("click", function(){
     animation_speed = 0.2
+    if ($('.active-flipper').hasClass("right-flip")){
+      var group_to_monthly = new CountUp("group-plan-price", (plans["group-plan"]["annual"]), (plans["group-plan"]["monthly"]), 0, animation_speed, options);
+      group_to_monthly.start();
+      var community_to_monthly = new CountUp("community-plan-price", (plans["community-plan"]["annual"]), (plans["community-plan"]["monthly"]), 0, animation_speed, options);
+      community_to_monthly.start();
+      var professional_to_monthly = new CountUp("professional-plan-price", (plans["professional-plan"]["annual"]), (plans["professional-plan"]["monthly"]), 0, animation_speed, options);
+      professional_to_monthly.start();
+      var network_to_monthly = new CountUp("network-plan-price", (plans["network-plan"]["annual"]), (plans["network-plan"]["monthly"]), 0, animation_speed, options);
+      network_to_monthly.start();
+      var enterprise_to_monthly = new CountUp("enterprise-plan-price", (plans["enterprise-plan"]["annual"]), (plans["enterprise-plan"]["monthly"]), 0, animation_speed, options);
+      enterprise_to_monthly.start();
+    };
     $('.active-flipper').removeClass("active-flipper");
     $('.left-flip').addClass("active-flipper");
-    var group_to_monthly = new CountUp("group-plan-price", (plans["group-plan"]["annual"]), (plans["group-plan"]["monthly"]), 0, animation_speed, options);
-    group_to_monthly.start();
-    var community_to_monthly = new CountUp("community-plan-price", (plans["community-plan"]["annual"]), (plans["community-plan"]["monthly"]), 0, animation_speed, options);
-    community_to_monthly.start();
-    var professional_to_monthly = new CountUp("professional-plan-price", (plans["professional-plan"]["annual"]), (plans["professional-plan"]["monthly"]), 0, animation_speed, options);
-    professional_to_monthly.start();
-    var network_to_monthly = new CountUp("network-plan-price", (plans["network-plan"]["annual"]), (plans["network-plan"]["monthly"]), 0, animation_speed, options);
-    network_to_monthly.start();
-    var enterprise_to_monthly = new CountUp("enterprise-plan-price", (plans["enterprise-plan"]["annual"]), (plans["enterprise-plan"]["monthly"]), 0, animation_speed, options);
-    enterprise_to_monthly.start();
   });
 
   $('.right-flip').on("click", function(){
     animation_speed = 0.2
+    if ($('.active-flipper').hasClass("left-flip")){
+      var group_to_monthly = new CountUp("group-plan-price", (plans["group-plan"]["monthly"]), (plans["group-plan"]["annual"]), 0, animation_speed, options);
+      group_to_monthly.start();
+      var community_to_monthly = new CountUp("community-plan-price", (plans["community-plan"]["monthly"]), (plans["community-plan"]["annual"]), 0, animation_speed, options);
+      community_to_monthly.start();
+      var professional_to_monthly = new CountUp("professional-plan-price", (plans["professional-plan"]["monthly"]), (plans["professional-plan"]["annual"]), 0, animation_speed, options);
+      professional_to_monthly.start();
+      var network_to_monthly = new CountUp("network-plan-price", (plans["network-plan"]["monthly"]), (plans["network-plan"]["annual"]), 0, animation_speed, options);
+      network_to_monthly.start();
+      var enterprise_to_monthly = new CountUp("enterprise-plan-price", (plans["enterprise-plan"]["monthly"]), (plans["enterprise-plan"]["annual"]), 0, animation_speed, options);
+      enterprise_to_monthly.start();
+    };
     $('.active-flipper').removeClass("active-flipper");
     $('.right-flip').addClass("active-flipper");
-    var group_to_monthly = new CountUp("group-plan-price", (plans["group-plan"]["monthly"]), (plans["group-plan"]["annual"]), 0, animation_speed, options);
-    group_to_monthly.start();
-    var community_to_monthly = new CountUp("community-plan-price", (plans["community-plan"]["monthly"]), (plans["community-plan"]["annual"]), 0, animation_speed, options);
-    community_to_monthly.start();
-    var professional_to_monthly = new CountUp("professional-plan-price", (plans["professional-plan"]["monthly"]), (plans["professional-plan"]["annual"]), 0, animation_speed, options);
-    professional_to_monthly.start();
-    var network_to_monthly = new CountUp("network-plan-price", (plans["network-plan"]["monthly"]), (plans["network-plan"]["annual"]), 0, animation_speed, options);
-    network_to_monthly.start();
-    var enterprise_to_monthly = new CountUp("enterprise-plan-price", (plans["enterprise-plan"]["monthly"]), (plans["enterprise-plan"]["annual"]), 0, animation_speed, options);
-    enterprise_to_monthly.start();
   });
 });
