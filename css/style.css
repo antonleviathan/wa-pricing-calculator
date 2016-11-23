@@ -20,7 +20,7 @@
   transition: all .2s ease-in;
 }
 .trial_button:hover{
-  background-color: green;
+  background-color: #006f3b;
 }
 #group-plan{
   margin-left: -2px;
