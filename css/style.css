@@ -1,6 +1,5 @@
 .price-container img{
   height: 70px;
-  font-family: 'PT Sans', sans-serif;
 }
 .trial_button{
   background-color: #8cc63f;
@@ -148,7 +147,7 @@
 }
 .plan{
   color: #8cc63f;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-family: 'PT Sans Narrow', sans-serif;
   margin-bottom: 10px;
 }
@@ -286,6 +285,7 @@
 }
 .noUi-value-horizontal{
   margin-top: -10px;
+  font-family: 'PT Sans', sans-serif;
 }
 .noUi-value-sub, .noUi-marker-horizontal.noUi-marker-sub, .noUi-marker-horizontal.noUi-marker-large {
   display: none;
