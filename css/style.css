@@ -1,0 +1,291 @@
+.price-container img{
+  height: 70px;
+}
+.trial_button{
+  background-color: #8cc63f;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: white;
+  position: absolute;
+  margin-top: 285px;
+  width: 110px;
+  height: 33px;
+  line-height: 35px;
+  text-decoration:none;
+  text-align: center;
+  font-family: 'PT Sans', sans-serif;
+}
+#group-plan{
+  margin-left: -2px;
+}
+#community-plan{
+  margin-left: -3px;
+}
+#professional-plan{
+  margin-left: -4px;
+}
+#network-plan{
+  margin-left: -5px;
+}
+#enterprise-plan{
+  margin-left: -6px;
+}
+.active-plan{
+  border:solid 2px #8cc63f;
+  position: relative;
+  z-index: 1000;
+}
+.arrow_box {
+	position: relative;
+	background: #ffffff;
+	border: 1px solid #D9D9D9;
+  color: #8cc63f;
+}
+.arrow_box:after, .arrow_box:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.arrow_box:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #ffffff;
+	border-width: 7px;
+	margin-left: -7px;
+}
+.arrow_box:before {
+	border-color: rgba(217, 217, 217, 0);
+	border-top-color: #D9D9D9;
+	border-width: 8px;
+	margin-left: -8px;
+}
+.annual-monthly-msg{
+  font-size:0.8em;
+  font-family: 'PT Sans', sans-serif;
+}
+#main-pricing-anchor{
+  margin:0 auto;
+  width: 945px;
+  margin-top:70px;
+}
+.how-many-contacts{
+  float: left;
+  margin-top: 40px;
+  font-family: 'PT Sans', sans-serif;
+}
+.center-slider{
+  display:block;
+  width:940px;
+  margin:0 auto;
+  margin-bottom: 50px;
+}
+.price-container{
+  float: left;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background-color:white;
+  width: 156px;
+  text-align: center;
+  font-family: 'PT Sans', sans-serif;
+}
+.regular-border{
+  border: 2px solid #D9D9D9;
+}
+.active-flipper{
+  background-color: #8cc63f;
+  color: white;
+}
+.left-flip, .right-flip{
+  float: left;
+  width: 50%;
+  line-height: 45px;
+  font-family: 'PT Sans', sans-serif;
+}
+.left-flip{
+  border-radius: 5px 0px 0px 5px;
+}
+.right-flip{
+  border-radius: 0px 5px 5px 0px;
+}
+.flipper{
+  display: inline-block;
+  width: 40%;
+  min-width: 240px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  color: black;
+  border-radius: 5px;
+  border: solid 1px #D9D9D9;
+}
+.nums-style{
+  color: black;
+  font-size: 1em;
+  margin-top: 10px;
+}
+.plan{
+  color: #8cc63f;
+  font-size: 1.5em;
+  font-family: 'PT Sans Narrow', sans-serif;
+  margin-bottom: 10px;
+}
+.plan-sub-text{
+  color: #9e9e9e;
+  font-family: 'PT Sans', sans-serif;
+  margin-bottom: 10px;
+}
+.plan-price{
+  margin-top: 20px;
+  color: #8cc63f;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: 'PT Sans Narrow', sans-serif;
+  float: left;
+}
+.plan-price-container{
+  display: inline-block;
+}
+.dollar-sign{
+  float: left;
+  margin-top: 23px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #8cc63f;
+}
+@media screen and (max-width: 316px){
+  .plan-price{
+    font-size: 1.2em;
+  }
+}
+#pricing-table{
+  width: 100%;
+  margin: 0 auto;
+}
+#flipper-container{
+  text-align: center;
+  width: 940px;
+  margin: 0 auto;
+}
+.calculator-wrapper{
+  display: inline-block;
+  min-width: 800px;
+  width: 1500px;
+}
+.slider-container{
+  width:700px;
+  margin:0 auto;
+  margin-top:50px;
+  margin-left: 80px;
+}
+.calc-instructions{
+  margin-bottom:30px;
+  text-align:center;
+}
+.admin-slider-title, .contact-slider-title{
+  margin-bottom:55px;
+  font-weight:bold;
+}
+.calculator-container{
+  float: left;
+}
+#plan{
+  float: left;
+  margin-top: 50px;
+  margin-left: 100px;
+  border: 1px solid darkgrey;
+  border-radius: 10px;
+  height: 380px;
+}
+#name{
+  background-color:#97D645;
+  color:white;
+  text-align:center;
+  font-size:2em;
+  border-radius: 10px 10px 0px 0px;
+  width:300px;
+  height:50px;
+  padding-top:16px;
+}
+#contacts, #admins, #monthly, #annual{
+  text-align:center;
+  font-weight:bold;
+}
+#admins{
+  width: 150px;
+  margin: 0 auto;
+  height: 30px;
+}
+#monthly, #annual{
+  font-size:1.5em;
+}
+#monthly-title, #annual-title{
+  text-align: center;
+  margin-bottom: 5px;
+}
+#slider-step-value, #slider-step-contact-value{
+  position:absolute;
+  margin-top:-35px;
+  width:55px;
+  height: 25px;
+  padding-top:3px;
+  border-radius: 5px;
+  text-align:center;
+  margin-left: -16px;
+  font-size: 1em;
+}
+.noUi-horizontal .noUi-handle {
+  width: 24px;
+  height: 24px;
+  left: -14px;
+  border-radius:50%;
+}
+.noUi-handle:after, .noUi-handle:before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 14px;
+  width: 1px;
+  background: none;
+  left: 14px;
+  top: 6px;
+}
+.noUi-handle {
+  border: 1px solid #D9D9D9;
+  border-radius: 3px;
+  background: #FFF;
+  cursor: default;
+  box-shadow: none;
+}
+.noUi-target {
+  border-radius: none;
+  border: none;
+  box-shadow: none;
+}
+.noUi-value-horizontal{
+  margin-top: -10px;
+}
+.noUi-value-sub, .noUi-marker-horizontal.noUi-marker-sub, .noUi-marker-horizontal.noUi-marker-large {
+  display: none;
+}
+.noUi-origin{
+  border-radius: 10px;
+  border: solid 1px #D9D9D9;
+  height: 14px;
+  background-color: white;
+}
+.noUi-base {
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  background-color: #8cc63f;
+  height: 14px;
+}
+.noUi-handle:hover, .noUi-origin:hover, .noUi-base:hover, .price-container:hover, .left-flip:hover, .right-flip:hover{
+  cursor: pointer;
+}
