@@ -121,36 +121,36 @@ $( document ).ready(function() {
     }
 
     if (  (parseInt(value) <= 50) ){
-      id = "#free-plan"
+      id = "#free-plan";
       $('#main-pricing-anchor').append(trial_button);
       classSwap();
       onClickUpdate();
-    };
+    }
     if ( (parseInt(value) > 50) && (parseInt(value) < 250) ){
-      id = "#group-plan"
+      id = "#group-plan";
       classSwap();
       onClickUpdate();
-    };
+    }
     if ( (parseInt(value) >= 250) && (parseInt(value) < 500) ){
-      id = "#community-plan"
+      id = "#community-plan";
       classSwap();
       onClickUpdate();
-    };
+    }
     if ( (parseInt(value) >= 500 ) && (parseInt(value) < 2000) ){
-      id = "#professional-plan"
+      id = "#professional-plan";
       classSwap();
       onClickUpdate();
-    };
+    }
     if ( (parseInt(value) >= 2000 ) && (parseInt(value) < 5000) ){
-      id = "#network-plan"
+      id = "#network-plan";
       classSwap();
       onClickUpdate();
-    };
+    }
     if ( (parseInt(value) >= 5000 ) ){
-      id = "#enterprise-plan"
+      id = "#enterprise-plan";
       classSwap();
       onClickUpdate();
-    };
+    }
   });
 
   window.onresize = function(event) {
@@ -159,8 +159,9 @@ $( document ).ready(function() {
   };
 
   $('.left-flip').on("click", function(){
+    flp = $('.active-flipper');
     animation_speed = 0.2
-    if ($('.active-flipper').hasClass("right-flip")){
+    if (flp.hasClass("right-flip")){
       var group_to_monthly = new CountUp("group-plan-price", (plans["group-plan"]["annual"]), (plans["group-plan"]["monthly"]), 0, animation_speed, options);
       group_to_monthly.start();
       var community_to_monthly = new CountUp("community-plan-price", (plans["community-plan"]["annual"]), (plans["community-plan"]["monthly"]), 0, animation_speed, options);
@@ -171,14 +172,15 @@ $( document ).ready(function() {
       network_to_monthly.start();
       var enterprise_to_monthly = new CountUp("enterprise-plan-price", (plans["enterprise-plan"]["annual"]), (plans["enterprise-plan"]["monthly"]), 0, animation_speed, options);
       enterprise_to_monthly.start();
-    };
-    $('.active-flipper').removeClass("active-flipper");
+    }
+    flp.removeClass("active-flipper");
     $('.left-flip').addClass("active-flipper");
   });
 
   $('.right-flip').on("click", function(){
+    flp = $('.active-flipper');
     animation_speed = 0.2
-    if ($('.active-flipper').hasClass("left-flip")){
+    if (flp.hasClass("left-flip")){
       var group_to_monthly = new CountUp("group-plan-price", (plans["group-plan"]["monthly"]), (plans["group-plan"]["annual"]), 0, animation_speed, options);
       group_to_monthly.start();
       var community_to_monthly = new CountUp("community-plan-price", (plans["community-plan"]["monthly"]), (plans["community-plan"]["annual"]), 0, animation_speed, options);
@@ -189,8 +191,8 @@ $( document ).ready(function() {
       network_to_monthly.start();
       var enterprise_to_monthly = new CountUp("enterprise-plan-price", (plans["enterprise-plan"]["monthly"]), (plans["enterprise-plan"]["annual"]), 0, animation_speed, options);
       enterprise_to_monthly.start();
-    };
-    $('.active-flipper').removeClass("active-flipper");
+    }
+    flp.removeClass("active-flipper");
     $('.right-flip').addClass("active-flipper");
   });
 });
