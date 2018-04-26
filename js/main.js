@@ -1,6 +1,5 @@
 $( document ).ready(function() {
-
-  var options = {
+  const OPTIONS = {
     useEasing : true,
     useGrouping : true,
     separator : ',',
@@ -90,17 +89,24 @@ $( document ).ready(function() {
   trial_button.innerText = "Free trial";
   trial_button.setAttribute('href', 'https://register.wildapricot.com/');
 
-  $('.price-container').click( function(event){
-    var plan_id = "#" + (jQuery(this).attr("id"));
-    var plan_id_raw = (jQuery(this).attr("id"));
-    $('.noUi-origin').css('left', plans[plan_id]);
-    stepSlider.noUiSlider.set([plans[plan_id_raw]["value"]]);
+  var classSwap = function(){
     $('.active-plan').removeClass("active-plan");
     $('.price-container').addClass("regular-border");
-    $(plan_id).addClass("active-plan");
-    $(plan_id).removeClass("regular-border");
-    var left_margin = $(plan_id).position().left;
+  };
+
+  function onClickUpdate(id) {
+    $(id).addClass("active-plan");
+    $(id).removeClass("regular-border");
+    var left_margin = $(id).position().left;
     $('.trial_button').css("left", (String(left_margin + 24)) + "px")
+  }
+
+  $('.price-container').click( function(event){
+    var plan_id = (jQuery(this).attr("id"));
+    $('.noUi-origin').css('left', plans["#" + plan_id]);
+    stepSlider.noUiSlider.set([plans[plan_id]["value"]]);
+    classSwap();
+    onClickUpdate("#" + plan_id);
   });
 
   stepSlider.noUiSlider.on('update', function( values, handle ) {
@@ -108,49 +114,22 @@ $( document ).ready(function() {
     stepSliderValueElement.innerText = values[handle];
     value = stepSliderValueElement.innerText;
 
-    var classSwap = function(){
-      $('.active-plan').removeClass("active-plan");
-      $('.price-container').addClass("regular-border");
-    };
-
-    var onClickUpdate = function(){
-      $(id).addClass("active-plan");
-      $(id).removeClass("regular-border");
-      var left_margin = $(id).position().left;
-      $('.trial_button').css("left", (String(left_margin + 24)) + "px")
-    }
-
-    if (  (parseInt(value) <= 50) ){
-      id = "#free-plan"
+    if ((parseInt(value) <= 50)){
+      var id = "#free-plan"
       $('#main-pricing-anchor').append(trial_button);
-      classSwap();
-      onClickUpdate();
+    } else if ((parseInt(value) > 50) && (parseInt(value) < 250)) {
+      var id = "#group-plan"
+    } else if ((parseInt(value) >= 250) && (parseInt(value) < 500)) {
+      var id = "#community-plan"
+    } else if ((parseInt(value) >= 500) && (parseInt(value) < 2000)) {
+      var id = "#professional-plan"
+    } else if ((parseInt(value) >= 2000) && (parseInt(value) < 5000)) {
+      var id = "#network-plan"
+    } else if ((parseInt(value) >= 5000)) {
+      var id = "#enterprise-plan"
     };
-    if ( (parseInt(value) > 50) && (parseInt(value) < 250) ){
-      id = "#group-plan"
-      classSwap();
-      onClickUpdate();
-    };
-    if ( (parseInt(value) >= 250) && (parseInt(value) < 500) ){
-      id = "#community-plan"
-      classSwap();
-      onClickUpdate();
-    };
-    if ( (parseInt(value) >= 500 ) && (parseInt(value) < 2000) ){
-      id = "#professional-plan"
-      classSwap();
-      onClickUpdate();
-    };
-    if ( (parseInt(value) >= 2000 ) && (parseInt(value) < 5000) ){
-      id = "#network-plan"
-      classSwap();
-      onClickUpdate();
-    };
-    if ( (parseInt(value) >= 5000 ) ){
-      id = "#enterprise-plan"
-      classSwap();
-      onClickUpdate();
-    };
+    onClickUpdate(id);
+    classSwap();
   });
 
   window.onresize = function(event) {
@@ -158,18 +137,15 @@ $( document ).ready(function() {
     $('.trial_button').css("left", (String(left_margin + 24)) + "px")
   };
 
-
   $('.left-flip').on("click", function(){
     $('.active-flipper').removeClass("active-flipper");
     $('.left-flip').addClass("active-flipper");
-
     for (var plan in plans) {
       if (plan != "free-plan"){
         CountUpHelper(plan, "monthly")
       }
     }
   });
-
 
   $('.right-flip').on("click", function(){
     $('.active-flipper').removeClass("active-flipper");
@@ -184,16 +160,15 @@ $( document ).ready(function() {
   function CountUpHelper(plan, mode) {
     const ANIMATION_SPEED = 0.2
     var plan = plan
-
     if (mode == "annual"){
       planObject = new CountUp(plan + "-price",
       (plans[plan]["monthly"]),
-      (plans[plan]["annual"]), 0, ANIMATION_SPEED, options);
+      (plans[plan]["annual"]), 0, ANIMATION_SPEED, OPTIONS);
     } else {
       planObject = new CountUp(plan + "-price",
       (plans[plan]["annual"]),
-      (plans[plan]["monthly"]), 0, ANIMATION_SPEED, options);
+      (plans[plan]["monthly"]), 0, ANIMATION_SPEED, OPTIONS);
     }
-      planObject.start();
+    planObject.start();
   }
 });
