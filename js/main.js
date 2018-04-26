@@ -112,20 +112,20 @@ $( document ).ready(function() {
   stepSlider.noUiSlider.on('update', function( values, handle ) {
     var stepSliderValueElement = document.getElementById('slider-step-value');
     stepSliderValueElement.innerText = values[handle];
-    value = stepSliderValueElement.innerText;
+    var value = parseInt(stepSliderValueElement.innerText);
 
-    if ((parseInt(value) <= 50)){
+    if (value <= 50){
       var id = "#free-plan"
       $('#main-pricing-anchor').append(trial_button);
-    } else if ((parseInt(value) > 50) && (parseInt(value) < 250)) {
+    } else if ((value > 50) && (value < 250)) {
       var id = "#group-plan"
-    } else if ((parseInt(value) >= 250) && (parseInt(value) < 500)) {
+    } else if ((value >= 250) && (value < 500)) {
       var id = "#community-plan"
-    } else if ((parseInt(value) >= 500) && (parseInt(value) < 2000)) {
+    } else if ((value >= 500) && (value < 2000)) {
       var id = "#professional-plan"
-    } else if ((parseInt(value) >= 2000) && (parseInt(value) < 5000)) {
+    } else if ((value >= 2000) && (value < 5000)) {
       var id = "#network-plan"
-    } else if ((parseInt(value) >= 5000)) {
+    } else if (value >= 5000) {
       var id = "#enterprise-plan"
     };
     onClickUpdate(id);
@@ -137,7 +137,7 @@ $( document ).ready(function() {
     $('.trial_button').css("left", (String(left_margin + 24)) + "px")
   };
 
-  $('.left-flip').on("click", function(){
+  $('.left-flip').on("click", function() {
     $('.active-flipper').removeClass("active-flipper");
     $('.left-flip').addClass("active-flipper");
     for (var plan in plans) {
@@ -147,7 +147,7 @@ $( document ).ready(function() {
     }
   });
 
-  $('.right-flip').on("click", function(){
+  $('.right-flip').on("click", function() {
     $('.active-flipper').removeClass("active-flipper");
     $('.right-flip').addClass("active-flipper");
     for (var plan in plans) {
